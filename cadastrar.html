@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar - Dashboard</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+  
+  label.error {
+    position: static;
+    color: red;
+    font-size: 12px !important;
+    opacity: 1 !important;
+    transform: none !important;
+    padding: 0;
+    margin: 0;
+    margin-bottom: -10px;
+}
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Modal Sair -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Já vai?</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Deseja realmente sair do sistema?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Permanecer no sistema</button>
+          <a href="index.html" class="btn btn-danger">Sair do sistema</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal LGPD -->
+  <div class="modal fade" id="lgpdModal" tabindex="-1" aria-labelledby="lgpdModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="lgpdModalLabel">Cookies</h1>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+          Nós utilizamos cookies e outras tecnologias semelhantes para coletar dados durante a navegação para melhorar a sua experiência em nossos serviços. Saiba mais em nossa <a href="#">Política de privacidade e Cookies.</a>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="btnLgpd" class="btn btn-secondary" data-bs-dismiss="modal">Estou ciente</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+    <div class="row">
+
+      <div class="col-3 bg-dark vh-100">
+
+        <div class="logo text-white text-center mt-2">
+
+          <span class="h1"><i class="bi bi-code"></i> rod7 Admin <i class="bi bi-code-slash"></i></span>
+
+          <hr>
+
+        </div>
+
+        <nav>
+
+          <a href="index.html" class="btn btn-outline-light d-block mb-2"><i class="bi bi-house me-1"></i>Home</a>
+
+          <a href="cadastrar.html" class="btn btn-outline-light d-block mb-2"><i class="bi bi-person-plus me-1"></i></i>Cadastrar
+            Cliente</a>
+
+          <a href="consultar.html" class="btn btn-outline-light d-block mb-2"><i class="bi bi-people me-1"></i>Listagem de
+            CLientes</a>
+
+          <a href="#" class="btn btn-outline-danger d-block mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-box-arrow-left me-1"></i></i>Sair</a>
+
+        </nav>
+
+      </div>
+
+      <div class="col-9 bg-light">
+
+        <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+
+          <div class="container-fluid justify-content-end">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+              <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+
+              <ul class="navbar-nav me-lg-4 text-end text-lg-start">
+
+                <li class="nav-item">
+
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+                </li>
+
+                <li class="nav-item">
+
+                  <a class="nav-link" href="#">Features</a>
+                </li>
+
+                <li class="nav-item">
+
+                  <a class="nav-link" href="#">Pricing</a>
+
+                </li>
+
+                <li class="nav-item dropdown">
+
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Dropdown link
+                  </a>
+
+                  <ul class="dropdown-menu text-end text-lg-start">
+
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+                  </ul>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </nav>
+
+        <main class="mt-5">
+
+          <h1>Cadastro de Cliente</h1>
+          
+          <form autocomplete="off">
+            
+            <div class="row">
+
+              <!-- Nome / E-mail -->
+              <div class="col-4">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="nome" class="form-control required" id="nome" placeholder="Digite o seu nome">
+                  <label for="nome">Digite o seu nome</label>
+                </div>
+
+              </div>
+              
+              <div class="col-4">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="email" class="form-control required email" id="email" placeholder="Digite o E-mail">
+                  <label for="email">Digite o E-mail</label>
+                </div>
+
+              </div>
+
+              <div class="col-4">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="cemail" class="form-control required email" equalTo="#email" id="cemail" placeholder="Digite o E-mail">
+                  <label for="email">Confirme o E-mail</label>
+                </div>
+
+              </div>
+
+              <!-- CPF / Data de Nascimento -->
+              <div class="col-6">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="dataNascimento" class="form-control required dateBR" id="dataNascimento" placeholder="Data de Nascimento">
+                  <label for="dataNascimento">Data de Nascimento</label>
+                </div>
+
+              </div>
+
+              <div class="col-6">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="cpf" class="form-control required cpf" id="cpf" placeholder="Digite o CPF">
+                  <label for="cpf">Digite o CPF</label>
+                </div>
+
+              </div>
+
+              <!-- CEP -->
+
+              <div class="col-12">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="cep" class="form-control required" id="cep" placeholder="Digite o CEP">
+                  <label for="cep">Digite o CEP</label>
+                  <label class="error" id="erro-cep"></label>
+                </div>
+
+              </div>
+
+              <!-- Logradouro, Número e Complemento -->
+
+              <div class="col-6">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="logradouro" class="form-control required" id="logradouro" placeholder="Logradouro">
+                  <label for="logradouro">Logradouro</label>
+                </div>
+
+              </div>
+
+              <div class="col-2">
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="numero" placeholder="Número">
+                  <label for="numero">Número</label>
+                </div>
+
+              </div>
+
+              <div class="col-4">
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="complemento" placeholder="Complemento">
+                  <label for="complemento">Complemento</label>
+                </div>
+
+              </div>
+
+              <!-- Bairro, Cidade e UF -->
+
+              <div class="col-5">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="bairro" class="form-control required" id="bairro" placeholder="Bairro">
+                  <label for="bairro">Bairro</label>
+                </div>
+
+              </div>
+
+              <div class="col-5">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="cidade" class="form-control required" id="cidade" placeholder="Cidade">
+                  <label for="cidade">Cidade</label>
+                </div>
+
+              </div>
+
+              <div class="col-2">
+
+                <div class="form-floating mb-3">
+                  <input type="text" name="uf" class="form-control" required id="uf" placeholder="UF" maxlength="2">
+                  <label for="uf">UF</label>
+                </div>
+
+              </div>
+  
+            </div>
+
+            <button class="btn btn-primary">Realizar Cadastro</button>
+
+          </form>
+
+        </main>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery.validate.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+
+    // $(document) mesma coisa que jQuery.document
+    $(document).ready(function() {
+
+      $('#erro-cep').hide(); // começa escondido
+      // erroCep.style.viibility = "hidden"; ( JS puro)
+      $('form').validate();
+
+      // alert("OK!");
+      $('#dataNascimento').mask('99/99/9999');
+      $('#cpf').mask('999.999.999-99');
+      $('#cep').mask('99999-999');
+
+      // $('#cep').blur(() => {
+      //   // Resgatar o valor informado no campo CEP
+      //   let cepValue = $('#cep').val(); // value (JS) => val(jQuery)
+
+      //   // Enviar o cepValue para a API
+      //   // $.getJSON('https://viacep.com.br/ws/'+ cepValue + '/json/');
+      //   $.getJSON(`https://viacep.com.br/ws/${cepValue}/json/`,
+      //   function(dados) {
+      //     $('#logradouro').val(dados.logradouro);
+      //     $('#bairro').val(dados.bairro);
+      //     $('#cidade').val(dados.localidade);
+      //     $('#uf').val(dados.uf);
+      //   });
+      // });
+
+      $('#cep').keyup(() => {
+        // Resgatar o valor informado no campo CEP
+        let cepValue = $('#cep').val(); // value (JS) => val(jQuery)
+
+        cepValue = cepValue.replaceAll('_', '');
+        cepValue = cepValue.replace('-', '');
+
+        if(cepValue.length == 8) {
+
+          // Enviar o cepValue para a API
+          // $.getJSON('https://viacep.com.br/ws/'+ cepValue + '/json/');
+          $.getJSON(`https://viacep.com.br/ws/${cepValue}/json/`,
+          function(dados) {
+
+            if(dados.erro) {
+              // alert("CEP Inválido");
+              $('#erro-cep').show();
+              $('#erro-cep').html('CEP Inválido');
+              // cepValue = $('#cep').val('');
+              $('#cep').focus();
+            }
+
+            else {
+              $('#erro-cep').hide();
+              $('#logradouro').val(dados.logradouro);
+              $('#bairro').val(dados.bairro);
+              $('#cidade').val(dados.localidade);
+              $('#uf').val(dados.uf);
+              $('#numero').focus();
+            }
+          }); // Fim da requisição API
+
+        }
+
+      }); // Fim do evento keyup
+      
+    }); // fim do ready
+
+  </script>
+
+</body>
+
+</html>
